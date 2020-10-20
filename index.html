@@ -67,6 +67,11 @@
         .navbar-nav {
             display: flex !important;
         }
+        .col-lg-6 {
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: 50% !important;
+        }
     }
     
     @media (min-width: 1200px) {
@@ -75,6 +80,17 @@
         }
         .navbar-nav {
             display: flex !important;
+        }
+        .col-lg-6 {
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: 50% !important;
+        }
+        .col-lg-4 {
+            -ms-flex: 0 0 33.33333%;
+            flex: 0 0 33.33333%;
+            max-width: 33.33333% !important;
+            /* margin: 8px; */
         }
     }
     
@@ -150,8 +166,6 @@
     a:hover {
         color: darkgreen;
         text-decoration: none;
-        /* transform: scale(1); */
-        /* font-weight: 600; */
     }
     
     .navbar-link {
@@ -221,10 +235,6 @@
         width: 100%;
         padding-right: 15px;
         padding-left: 15px;
-    }
-    
-    .col-lg-6 {
-        max-width: 50%;
     }
     
     .hero {
@@ -308,14 +318,56 @@
         padding-bottom: .25rem !important;
     }
     
+    .pt-1 {
+        padding-top: .25rem !important;
+    }
+    
+    .pl-1 {
+        padding-left: .25rem !important;
+    }
+    
+    .pl-2 {
+        padding-left: .5rem !important;
+    }
+    
+    .pr-1 {
+        padding-right: .25rem !important;
+    }
+    
+    .p-3 {
+        padding: .75rem !important;
+    }
+    
+    .mb-1,
+    .my-1 {
+        margin-bottom: .25rem !important;
+    }
+    
     .mb-2,
     .my-2 {
         margin-bottom: .5rem !important;
     }
     
+    .mb-3,
+    .my-3 {
+        margin-bottom: .75rem !important;
+    }
+    
     .mr-3,
     .mx-3 {
         margin-right: 1rem !important;
+    }
+    
+    .ml-1 {
+        margin-left: .25rem !important;
+    }
+    
+    .ml-2 {
+        margin-left: .5rem !important;
+    }
+    
+    .ml-3 {
+        margin-left: .75rem !important;
     }
     
     .mt-1,
@@ -369,18 +421,140 @@
     }
     
     .card {
+        padding: 15px;
         position: relative;
+        display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
         min-width: 0;
         word-wrap: break-word;
-        background-color: #fff;
         background-clip: border-box;
-        border: 1px solid rgba(0, 0, 0, 0.085);
         border-radius: 1rem;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, .06), 0 6px 6px rgba(0, 0, 0, .02);
+        width: 100%;
+    }
+    
+    .card>.list-group:last-child .list-group-item:last-child {
+        border-bottom-right-radius: .25rem;
+        border-bottom-left-radius: .25rem
+    }
+    
+    .card-body {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 1.25rem
+    }
+    
+    .card-header {
+        padding: .75rem 1.25rem;
+        margin-bottom: 0;
+        /* background-color: rgba(0, 0, 0, .03); */
+        /* border-bottom: 1px solid rgba(0, 0, 0, .125) */
+    }
+    
+    .card-header:first-child {
+        border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0
+    }
+    
+    .card-header+.list-group .list-group-item:first-child {
+        border-top: 0
+    }
+    
+    .card-footer {
+        padding: .75rem 1.25rem;
+        /* background-color: rgba(0, 0, 0, .03); */
+        /* border-top: 1px solid rgba(0, 0, 0, .125) */
+    }
+    
+    .card-footer:last-child {
+        border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px)
+    }
+    
+    .rounded {
+        border-radius: 1rem;
+    }
+    
+    .card-hover {
+        transition: all 0.2s ease-in-out;
+    }
+    
+    .card-hover:hover,
+    .card-hover:focus {
+        -webkit-transform: translateY(-3px);
+        transform: translateY(-3px);
+    }
+    
+    .hero-article {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    
+    .article-gradient {
+        background-repeat: repeat-x;
+        background-image: linear-gradient(to bottom, rgba(30, 32, 34, 0.3) 0%, #28a745 100%);
+        border-radius: 1rem;
+        /* height: 330px !important; */
+    }
+    
+    .text-white {
+        color: #fff !important;
+    }
+    
+    .text-white>p {
+        color: #fff !important;
+    }
+    
+    .article-header {
+        padding-left: 3rem;
+        padding-right: 3rem;
+        padding-top: 1.5rem;
+        /* display: block; */
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    
+    .article-body {
+        padding: 0rem 1.5rem;
+        /* display: block; */
+        /* text-transform: uppercase; */
+        font-weight: 600;
+        font-size: x-large;
+    }
+    
+    .article-footer {
+        padding-left: 3rem;
+        padding-right: 3rem;
+        padding-bottom: 1.5rem;
+        margin-top: 88px;
+    }
+    /*
+    .card footer {
+        padding: .5rem;
+    }
+    
+    .card:last-child .card-footer {
+        border-bottom-right-radius: 0.3125rem;
+        border-bottom-left-radius: 0.3125rem;
+    }
+    
+    .card-footer:last-child {
+        border-radius: 0 0 0.25rem 0.25rem;
+    } */
+    
+    .article-caption {
+        font-weight: 600;
+        font-size: 1.25rem;
+        line-height: 1rem;
+    }
+    
+    .article-readmore {
+        font-weight: 400 !important;
+        font-size: 1rem;
     }
 </style>
 
@@ -395,7 +569,7 @@
                     </a>
                     <ul class="navbar-nav">
                         <li class="navbar-nav-item">
-                            <a href="#" class="navbar-link">Articles</a>
+                            <a href="#" class="navbar-link">News</a>
                         </li>
                         <li class="navbar-nav-item">
                             <a href="#" class="navbar-link">FAQ</a>
@@ -458,17 +632,70 @@
                 </div>
             </div>
         </section>
-        <section class="d-flex">
-            <div class="container space-2">
-                <div class="caption text-center">
-                    <h1>Frequent Question</h1>
-                    <p>Pelajari lebih banyak dari pertanyaan yang sering digunakan</p>
+        <section>
+            <div class="container">
+                <div class="space-2">
+                    <div class="caption text-center">
+                        <h1>News</h1>
+                        <p>Yuk kenali, ada apa saja yang baru dari aplikasi pembinaan</p>
+                    </div>
                 </div>
-                <div class="row hero">
-                    <div class="col-lg-6 space-1">
-                        <div class="mb-2 card">
-                            <button class="collapse">Bagaimana menggunakan QR Code saat absensi?</button>
-                            <div class="collapse-body">
+                <div class="row">
+                    <div class="card col-lg-4 card-hover">
+                        <div class="hero-article rounded" style="background-image: url(img/articles/article-2.jpg);">
+                            <div class="article-gradient">
+                                <div class="card-header text-white article-header">Update</div>
+                                <div class="card-body text-white">
+                                    <p class="article-body">Versi 1.4.201012 Hadir Hadirkan Absen menggunakan QR Code</p>
+                                </div>
+                                <div class="card-footer article-footer">
+                                    <a href="#" class="text-white ">Read More <i class="fas fa-chevron-right text-white ml-3"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card col-lg-4 card-hover">
+                        <div class="hero-article rounded" style="background-image: url(img/articles/article-1.jpg);">
+                            <div class="article-gradient">
+                                <div class="card-header text-white article-header">Update</div>
+                                <div class="card-body text-white">
+                                    <p class="article-body">Versi 1.4.201005 Nikmati Tampilan Home Baru</p>
+                                </div>
+                                <div class="card-footer article-footer">
+                                    <a href="#" class="text-white ">Read More <i class="fas fa-chevron-right text-white ml-3"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card col-lg-4 card-hover">
+                        <div class="hero-article rounded" style="background-image: url(img/articles/article-3.png);">
+                            <div class="article-gradient">
+                                <div class="card-header text-white article-header">Panduan</div>
+                                <div class="card-body text-white">
+                                    <p class="article-body">Agar Tidak Ditolak, Cermati Cara Mengajukan Iji Disini</p>
+                                </div>
+                                <div class="card-footer article-footer">
+                                    <a href="#" class="text-white ">Read More <i class="fas fa-chevron-right text-white ml-3"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="d-flex ">
+            <div class="container space-2 ">
+                <div class="caption text-center ">
+                    <h1>Frequent Question</h1>
+                    <p>Pelajari lebih banyak dari pertanyaan yang sering ajukan</p>
+                </div>
+                <div class="row hero ">
+                    <div class="col-lg-6 space-1 ">
+                        <div class="mb-2 card card-hover ">
+                            <button class="collapse ">Bagaimana menggunakan QR Code saat absensi?</button>
+                            <div class="collapse-body ">
                                 <p>Dalam melakukan absensi pastikan pegawai untuk melakukan scan QR Code sesuai waktu yang telah ditentukan. Langkah absensi sebagai berikut:</p>
                                 <ol>
                                     <li>Ketuk menu Absensi Scanner yang ada di halaman utama aplikasi</li>
@@ -478,16 +705,16 @@
                                 </ol>
                             </div>
                         </div>
-                        <div class="mb-2 card">
-                            <button class="collapse">Bagaimana mengetahui waktu pengurusan KGB saya?</button>
-                            <div class="collapse-body">
+                        <div class="mb-2 card card-hover ">
+                            <button class="collapse ">Bagaimana mengetahui waktu pengurusan KGB saya?</button>
+                            <div class="collapse-body ">
                                 <p>Pengurusan KGB ditentukan saat terhitung 2 tahun sejak KGB sebelumnya. Notifikasi akan dikirimkan melalui aplikasi saat H-6 sebelum batas pengurusan KGB, notifikasi akan ditampilkan setiap hari hingga KGB telah diperbaharui
                                     atau selesai diajukan.</p>
                             </div>
                         </div>
-                        <div class="mb-2 card">
-                            <button class="collapse">Apa yang ditampilkan di halaman absensi?</button>
-                            <div class="collapse-body">
+                        <div class="mb-2 card card-hover ">
+                            <button class="collapse ">Apa yang ditampilkan di halaman absensi?</button>
+                            <div class="collapse-body ">
                                 <p>Pada halaman absensi akan ditampilkan berupa:</p>
                                 <ol>
                                     <li>Harian: Ditampilkan berupa keterangan absen datang dan pulang, seperti Datang Tepat dan Pulan Tepat</li>
@@ -495,41 +722,32 @@
                                 </ol>
                             </div>
                         </div>
-                        <div class="mb-2 card">
-                            <button class="collapse">Kenapa pengajuan ijin saya tidak di setujui?</button>
-                            <div class="collapse-body">
+                        <div class="mb-2 card card-hover ">
+                            <button class="collapse ">Kenapa pengajuan ijin saya tidak di setujui?</button>
+                            <div class="collapse-body ">
                                 <p>Dalam mengajukan ijin dan cuti pastikan memilih katergori yang sesuai untuk cuti, isi formulir izi dan tunggu admin untuk memverifikasi iji atau cuti tersebut. Sebagai catatan Ijin Sakit harus disertai Surat Keterangan
                                     Dokter.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="hero-img">
-                            <img src="img/bg-3.png" alt="bg-2">
+                    <div class="col-lg-6 ">
+                        <div class="hero-img ">
+                            <img src="img/bg-3.png " alt="bg-2 ">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <div class="container">
-            <h3>block feature 2</h3>
-        </div>
-        <div class="container">
-            <h3>block feature 3</h3>
-        </div>
-        <div class="container">
-            <h3>block faq</h3>
-        </div>
-        <div class="container">
+        <div class="container ">
             <h3>block download now</h3>
         </div>
     </main>
-    <footer id="footer">
+    <footer id="footer ">
         <h3>footer</h3>
     </footer>
 </body>
-<script src="js/js.js"></script>
+<script src="js/js.js "></script>
 <script>
 </script>
 
