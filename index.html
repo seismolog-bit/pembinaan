@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembinaan Kejari Kabupaten Malang</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="vendor/font-awesome/css/all.min.css">
+
+    <!-- favicon generator -->
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+
+<style>
+    .header {
+        position: relative;
+        right: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1001;
+    }
+    
+    .header-section {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .06), 0 6px 6px rgba(0, 0, 0, .02);
+        position: relative;
+        z-index: 1;
+        background-color: #fff;
+    }
+    /* media container */
+    
+    @media (min-width: 576px) {
+        .container {
+            max-width: 540px;
+        }
+    }
+    
+    @media (min-width: 768px) {
+        .container {
+            max-width: 720px;
+        }
+    }
+    
+    @media (min-width: 992px) {
+        .container {
+            max-width: 960px;
+        }
+        .navbar-nav {
+            display: flex !important;
+        }
+    }
+    
+    @media (min-width: 1200px) {
+        .container {
+            max-width: 1140px;
+        }
+        .navbar-nav {
+            display: flex !important;
+        }
+    }
+    
+    .container {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+    .navbar {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 0 0;
+        height: 64px;
+    }
+    
+    .navbar-brand,
+    .navbar-brand>img {
+        width: 46px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .1), 0 6px 6px rgba(0, 0, 0, .175);
+        padding: 6px;
+        border-radius: 6.1875rem;
+    }
+    
+    .navbar-brand>p {
+        padding-left: 15px;
+    }
+    
+    .navbar-brand {
+        font-weight: 600;
+        display: contents;
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+        margin-left: 0;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap;
+    }
+    
+    .navbar-nav {
+        display: none;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+        flex-grow: 1;
+        flex-basis: 100%;
+        justify-content: flex-end;
+    }
+    
+    ol,
+    ul,
+    dl {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+    
+    ul {
+        display: block;
+        list-style-type: disc;
+        padding-inline-start: 40px;
+    }
+    
+    a {
+        color: #28a745;
+        text-decoration: none;
+        background-color: transparent;
+        transition: all 0.2s ease-in-out;
+    }
+    
+    a:hover {
+        color: darkgreen;
+        text-decoration: none;
+        /* transform: scale(1); */
+        /* font-weight: 600; */
+    }
+    
+    .navbar-link {
+        display: block;
+        color: #677788;
+        padding: 0.5rem 1rem;
+    }
+    
+    .nav-btn-login {
+        width: 100%;
+        text-align: end;
+    }
+    
+    .btn {
+        display: inline-block;
+        font-weight: 600;
+        color: #677788;
+        text-align: center;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-color: transparent;
+        border: 0.0625rem solid transparent;
+        font-size: 1rem;
+        line-height: 1.6rem;
+        min-width: max-content;
+    }
+    
+    .btn-login {
+        color: #fff;
+        background: #28a745;
+        padding: 0.425rem 1.25rem;
+        font-size: 0.875rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .1), 0 6px 6px rgba(0, 0, 0, .175);
+        transition: all 0.2s ease-in-out;
+        border-radius: 6.1875rem;
+    }
+    
+    .btn:not(:disabled):not(.disabled) {
+        cursor: pointer;
+    }
+    
+    .btn:hover {
+        background: #fff;
+        color: #28a745;
+        border-color: darkgreen;
+        text-decoration: none;
+        transform: scale(1.01);
+    }
+    
+    .bg-light {
+        background-color: #f7faff;
+    }
+    
+    .row {
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    
+    .col,
+    .col-lg-6 {
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    
+    .col-lg-6 {
+        max-width: 50%;
+    }
+    
+    .hero {
+        justify-content: space-between;
+    }
+    
+    .align-center {
+        align-self: center !important;
+    }
+    
+    .hero-caption {
+        line-height: 1.27rem;
+    }
+    
+    .caption>h1 {
+        color: #1e2022;
+        font-weight: 600;
+        line-height: 2.75rem;
+        font-size: 2rem;
+    }
+    
+    .caption>h2 {
+        color: #1e2022;
+        font-weight: 400;
+        line-height: 2.75rem;
+        font-size: 1.5rem;
+    }
+    
+    .caption>p {
+        font-weight: 400;
+        font-size: larger;
+    }
+    
+    .hero-img {
+        padding-top: 68px;
+    }
+    
+    .hero-img>img {
+        width: 100%;
+    }
+    
+    .text-center {
+        text-align: center;
+    }
+    
+    .d-flex {
+        display: flex !important;
+    }
+    
+    .space-1,
+    .space-top-1 {
+        padding-top: 2rem !important;
+    }
+    
+    .space-1,
+    .space-bottom-1 {
+        padding-bottom: 2rem !important;
+    }
+    
+    .space-2,
+    .space-top-2 {
+        padding-top: 4rem !important;
+    }
+    
+    .space-2,
+    .space-bottom-2 {
+        padding-bottom: 4rem !important;
+    }
+    
+    .list-style {
+        padding: 0;
+        list-style: none;
+    }
+    
+    .list-style>li {
+        font-size: 1.05rem !important;
+    }
+    
+    .pb-1,
+    .py-1 {
+        padding-bottom: .25rem !important;
+    }
+    
+    .mb-2,
+    .my-2 {
+        margin-bottom: .5rem !important;
+    }
+    
+    .mr-3,
+    .mx-3 {
+        margin-right: 1rem !important;
+    }
+    
+    .mt-1,
+    .my-1 {
+        margin-top: .25rem !important;
+    }
+    
+    .text-success {
+        color: #28a745 !important
+    }
+    
+    .collapse {
+        background-color: #fff;
+        border-radius: 1rem;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        color: #4a4b65;
+        font-weight: 600;
+        font-size: 1.05rem;
+    }
+    
+    .collapse:hover {
+        background-color: #f7faff;
+        color: darkgreen;
+    }
+    
+    .collapse:after {
+        content: '\002B';
+        color: #28a745;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+    
+    .active:after {
+        content: "\2212";
+        color: darkgreen;
+    }
+    
+    .collapse-body {
+        padding: 0 18px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        background-color: #fff;
+        border-radius: 1rem;
+    }
+    
+    .card {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0, 0, 0, 0.085);
+        border-radius: 1rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .06), 0 6px 6px rgba(0, 0, 0, .02);
+    }
+</style>
+
+<body>
+    <header id="header" class="header">
+        <div class="header-section">
+            <div class="container">
+                <nav class="navbar">
+                    <a href="index.html" class="navbar-brand">
+                        <img src="img/logo.png" alt="Logo">
+                        <p>Pembinaan</p>
+                    </a>
+                    <ul class="navbar-nav">
+                        <li class="navbar-nav-item">
+                            <a href="#" class="navbar-link">Articles</a>
+                        </li>
+                        <li class="navbar-nav-item">
+                            <a href="#" class="navbar-link">FAQ</a>
+                        </li>
+                        <li class="navbar-nav-item">
+                            <a href="#" class="navbar-link">Help Center</a>
+                        </li>
+                    </ul>
+                    <div class="nav-btn-login">
+                        <a href="#" class="btn btn-login">Login Pegawai</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main id="content">
+        <div class="bg-light">
+            <div class="container space-2">
+                <div class="row hero">
+                    <div class="col-lg-6 align-center">
+                        <div class="hero-caption caption">
+                            <h1>Sistem Informasi dan Management Pegawai</h1>
+                            <p>Kejaksaan Negeri Kabupaten Malang</p>
+                            <span>Pertanyaan terpopuler: <a href="#">QR absensi</a>, <a href="#">Pengajuan KGB</a>, <a href="#">Melihat detail absensi</a>, <a href="#">Pengajuan ijin</a></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-img">
+                            <img src="img/bg-1.png" alt="bg-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="bg-light d-flex">
+            <div class="container space-2">
+                <div class="caption text-center">
+                    <h1>Apa yang tersedia</h1>
+                    <p>Kami sediakan berbagai layanan informasi serta administrasi pegawai</p>
+                </div>
+                <div class="row hero">
+                    <div class="col-lg-6">
+                        <div class="hero-img">
+                            <img src="img/bg-2.png" alt="bg-2">
+                        </div>
+                    </div>
+                    <div class="caption col-lg-6 align-center">
+                        <h2>Fitur Utama</h2>
+                        <ul class="list-style">
+                            <li class="d-flex pb-1 mb-2"><i class="fas fa-check-circle text-success mt-1 mr-3"></i> Pengajuan cuti dan ijin pegawai</li>
+                            <li class="d-flex pb-1 mb-2"><i class="fas fa-check-circle text-success mt-1 mr-3"></i> Absensi menggunakan QR Code</li>
+                            <li class="d-flex pb-1 mb-2"><i class="fas fa-check-circle text-success mt-1 mr-3"></i> Notifikasi Kenaikan Gaji Berkala (KGB)</li>
+                        </ul>
+                        <h2>Fitur Laporan</h2>
+                        <ul class="list-style">
+                            <li class="d-flex pb-1 mb-2"><i class="fas fa-check-circle text-success mt-1 mr-3"></i> Laporan absensi harian dan bulanan</li>
+                            <li class="d-flex pb-1 mb-2"><i class="fas fa-check-circle text-success mt-1 mr-3"></i> Laporan tunjuanan harian dan bulanan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="d-flex">
+            <div class="container space-2">
+                <div class="caption text-center">
+                    <h1>Frequent Question</h1>
+                    <p>Pelajari lebih banyak dari pertanyaan yang sering digunakan</p>
+                </div>
+                <div class="row hero">
+                    <div class="col-lg-6 space-1">
+                        <div class="mb-2 card">
+                            <button class="collapse">Bagaimana menggunakan QR Code saat absensi?</button>
+                            <div class="collapse-body">
+                                <p>Dalam melakukan absensi pastikan pegawai untuk melakukan scan QR Code sesuai waktu yang telah ditentukan. Langkah absensi sebagai berikut:</p>
+                                <ol>
+                                    <li>Ketuk menu Absensi Scanner yang ada di halaman utama aplikasi</li>
+                                    <li>Ketuk tombol QR Code pada bagian bawah halaman</li>
+                                    <li>Lalu arahkan kamera ke gambar QR Code yang telah dicetak oleh petugas</li>
+                                    <li>Selesai absensi anda telah tersimpan</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="mb-2 card">
+                            <button class="collapse">Bagaimana mengetahui waktu pengurusan KGB saya?</button>
+                            <div class="collapse-body">
+                                <p>Pengurusan KGB ditentukan saat terhitung 2 tahun sejak KGB sebelumnya. Notifikasi akan dikirimkan melalui aplikasi saat H-6 sebelum batas pengurusan KGB, notifikasi akan ditampilkan setiap hari hingga KGB telah diperbaharui
+                                    atau selesai diajukan.</p>
+                            </div>
+                        </div>
+                        <div class="mb-2 card">
+                            <button class="collapse">Apa yang ditampilkan di halaman absensi?</button>
+                            <div class="collapse-body">
+                                <p>Pada halaman absensi akan ditampilkan berupa:</p>
+                                <ol>
+                                    <li>Harian: Ditampilkan berupa keterangan absen datang dan pulang, seperti Datang Tepat dan Pulan Tepat</li>
+                                    <li>Bulanan: Ditampilkan berupa rekap absensi selama sebulan, misalnya akumulasi Datang Tepat, Datang Terlambar, Ijin, Cuti dan sebagainya</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="mb-2 card">
+                            <button class="collapse">Kenapa pengajuan ijin saya tidak di setujui?</button>
+                            <div class="collapse-body">
+                                <p>Dalam mengajukan ijin dan cuti pastikan memilih katergori yang sesuai untuk cuti, isi formulir izi dan tunggu admin untuk memverifikasi iji atau cuti tersebut. Sebagai catatan Ijin Sakit harus disertai Surat Keterangan
+                                    Dokter.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-img">
+                            <img src="img/bg-3.png" alt="bg-2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container">
+            <h3>block feature 2</h3>
+        </div>
+        <div class="container">
+            <h3>block feature 3</h3>
+        </div>
+        <div class="container">
+            <h3>block faq</h3>
+        </div>
+        <div class="container">
+            <h3>block download now</h3>
+        </div>
+    </main>
+    <footer id="footer">
+        <h3>footer</h3>
+    </footer>
+</body>
+<script src="js/js.js"></script>
+<script>
+</script>
+
+</html>
